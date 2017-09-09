@@ -17,6 +17,11 @@ import com.potatosaucevfx.mylogin.user.UserDAOImpl;
 
 @Controller
 public class LoginController {
+	
+	// TODO: Proper password encryption storage.
+	// TODO: CSS For login pages.
+	// TODO: Add more data.
+	// TODO: 
 
 
 	@Autowired
