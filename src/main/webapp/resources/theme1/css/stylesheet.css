@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+body {
+	background: linear-gradient(to bottom, #6de1ff 0%,#a848a5 100%);
+	background-repeat: no-repeat;
+}
+
+td {
+	font-size: 16pt;
+	font-family: sans-serif;
+}
+
+.headerTitle {
+	text-align: center;
+	font-size: 16pt;
+	font-family: sans-serif;
+	
+}

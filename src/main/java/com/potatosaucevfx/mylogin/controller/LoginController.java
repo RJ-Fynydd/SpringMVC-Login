@@ -21,7 +21,6 @@ public class LoginController {
 	// TODO: Proper password encryption storage.
 	// TODO: CSS For login pages.
 	// TODO: Add more data.
-	// TODO: 
 
 
 	@Autowired
@@ -41,6 +40,9 @@ public class LoginController {
 		if (user != null) {
 			mav = new ModelAndView("welcome");
 			mav.addObject("name", (user.getFirstName().equals("") || user.getFirstName().equals(null) ? user.getUsername() : user.getFirstName()));
+			mav.addObject("lastName", user.getLastName());
+			mav.addObject("email", user.getEmail());
+			mav.addObject("phoneNumber", user.getPhoneNumber());
 		} else {
 			mav = new ModelAndView("login");
 			mav.addObject("message", "Username or Password is wrong!!");
