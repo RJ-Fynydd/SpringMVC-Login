@@ -30,10 +30,19 @@ public class RegistrationController {
 	@RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("user") User user) {
 		System.out.println("Processing Registration");
+		if(user.getUsername().equals("") || user.getUsername().equals(null) || user.getPassword().equals("") || user.getPassword().equals(null)) {
+			ModelAndView mav = new ModelAndView("register");
+			mav.addObject("user", new User());
+			mav.addObject("message", "The request you have made has errored successfully.");
+			return mav;
+		} else {
+			userDao.register(user);
+			return new ModelAndView("welcome", "name", (user.getFirstName().equals("") || 
+					user.getFirstName().equals(null) ? user.getUsername() : user.getFirstName()));
+		
+		}
 		
 		
-		userDao.register(user);
-		return new ModelAndView("welcome", "name", (user.getFirstName().equals("") || user.getFirstName().equals(null) ? user.getUsername() : user.getFirstName()));
 	}
 
 }

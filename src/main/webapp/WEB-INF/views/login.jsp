@@ -25,40 +25,66 @@
 			</tr>
 			<tr>
 				<td><form:label path="password">Password:</form:label></td>
-				<td><form:password path="password" name="password"
-						id="password" /></td>
+				<td><form:password path="password" name="password" id="password" /></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td align="left"><form:button id="login" name="login">Login</form:button>
+				<td align="center"><form:button id="login" name="login">Login</form:button>
 				</td>
-			</tr>
-			<tr></tr>
-			<tr>
-				<td></td>
-				<td><a href="home.jsp">Home</a></td>
 			</tr>
 		</table>
 	</form:form>
+	
+	
+	<a href="home.jsp" style="text-align: left; font-size: 22px; font-family: sans-serif;">Home</a>
 	<table align="center">
 		<tr>
 			<td style="font-style: italic; color: red;">${message}</td>
 		</tr>
 	</table>
-	
-	<audio id="audio" src="https://overwatch.gamepedia.com/media/overwatch.gamepedia.com/6/6a/Mei_-_A-Mei-Zing.mp3"></audio>
-	<button id="myButton" onclick="">Hide/Show Login</button>
-	
+
+	<!-- <button id="loginButton" style="font-size: 20pt; font-style: italic; color: red;">GG</button> -->
 	<!--https://www.w3schools.com/jquery/jquery_animate.asp-->
 	
 	
 	<script type="text/javascript">
+	
+	function getRandomArbitrary(min, max) {
+		return Math.random() * (max - min) + min;
+	}
+	/*
 	$(document).ready(function(){
-	    $("button").click(function(){
-	        $("button").animate({width: '+=10px', height: '+=10px'},1000);
-	        document.getElementById('audio').play();
+	    $("#myButton").click(function(){
+	    		if (window.HTMLAudioElement) {
+	    			try {
+	    				
+	    				for(var i = 0; i < 1000; i++) {
+	    					var randomNumber = Math.floor(Math.random() * 4000);
+	    					setTimeout(function() {
+	    					
+	    						
+	    					var snd1  = new Audio();
+	    					var src1  = document.createElement("source");
+	    					src1.type = "audio/mpeg";
+	    					src1.src  = "https://overwatch.gamepedia.com/media/overwatch.gamepedia.com/3/38/D.Va_-_GG.ogg";
+	    					snd1.appendChild(src1);
+
+	    					snd1.play();
+	    					console.log(getRandomArbitrary(0, 100));
+	    					
+	    					
+	    					}, randomNumber);
+	    					
+	    				}
+	    				
+	    			} catch(e) {
+	    				if(window.console && console.error("Error:" + e));
+	    			}
+	    		}
+	        
 	    });
 	});
+	*/
 	</script>
 	
 </body>

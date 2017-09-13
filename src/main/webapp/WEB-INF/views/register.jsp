@@ -9,6 +9,7 @@
 <title>Registration</title>
 </head>
 <body>
+	<div><p style="font-style: italic; color: red; text-align: center;">${message}</div>
 	<form:form id="regForm" modelAttribute="user" action="registerProcess"
 		method="post">
 		<table align="center">
